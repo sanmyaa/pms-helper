@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PMS Standup Helpers</title>
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --text-primary: #111;
+      --text-secondary: #555;
+      --btn-bg: #fff;
+      --btn-border: #000;
+      --btn-text: #000;
+      --btn-hover-bg: #000;
+      --btn-hover-text: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border-radius: 2rem; /* Much more rounded */
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border: 2px solid var(--btn-border);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--btn-hover-bg);
+      color: var(--btn-hover-text);
+    }
+
+    @media (min-width: 600px) {
+      .buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PMS</h1>
+    <p>Standup Helpers</p>
+    <div class="buttons">
+      <a href="https://script.google.com/a/macros/nowpurchase.com/s/AKfycbw093vbW8g6cB7dBkTG7Jv3VDsRsz-i4MrHoyVOJQegk097uxWMvU6fOhJZfmxoN8Dh6w/exec" class="btn" target="_blank">Task Standup Helper</a>
+      <a href="https://script.google.com/a/macros/nowpurchase.com/s/AKfycbwiF2OX3FGzakc71d5bxK__8RXy1K2Ixv2ftNifdSAXW-RDKej79-TlRzeEL7hEhz5E/exec" class="btn" target="_blank">Bug Standup Helper</a>
+    </div>
+  </div>
+</body>
+</html>
