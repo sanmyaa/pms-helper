@@ -9,7 +9,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap"
       rel="stylesheet" />
-    <title>Task Helper</title>
+    <title>Task Table</title>
     <style>
       * {
         margin: 0;
@@ -145,7 +145,7 @@
         width: 100%;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 20px;
+        gap: 30px;
         margin: 8px 0 15px 0;
         font-size: 12px;
         color: #777;
@@ -162,7 +162,6 @@
       .expander-header .info-item.shorts {
         white-space: nowrap;
         flex-shrink: 0;
-        padding-right: 30px;
       }
 
       .expander-header .shorts a {
@@ -230,6 +229,9 @@
       .step-form-link {
         color: #888;
       }
+      .enclosed-label-content {
+        margin-top: 8px;
+      }
 
       .add-new {
         padding: 10px 18px;
@@ -275,7 +277,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const apiUrl =
-          "https://script.google.com/macros/s/AKfycbzfQCAU-JEarEO1jkvmGXOAYXcwr-eWa3hegRmF10b_Rh1W-xSItXlfPeOjvtvRNXBKYA/exec";
+          "https://script.google.com/a/macros/nowpurchase.com/s/AKfycbzfQCAU-JEarEO1jkvmGXOAYXcwr-eWa3hegRmF10b_Rh1W-xSItXlfPeOjvtvRNXBKYA/exec";
         fetch(apiUrl)
           .then((response) => response.json())
           .then((result) => {
@@ -380,43 +382,45 @@
                             <td colspan="11">
                                 <div class="expander-content">
                                     <div class="expander-header">
-                                        <div class="info-item shorts"><b>Made On:</b> ${
+                                        <div class="info-item shorts"><b>Made On:</b><br/><div class="enclosed-label-content">${
                                           task.createdAt
-                                        }
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Subtask:</b> ${
-                                              task.subtaskCreated
-                                                ? `(${
-                                                    task.subtaskCompleted || 0
-                                                  }/${
-                                                    task.subtaskCreated || 0
-                                                  }) done`
-                                                : "N/A"
-                                            }</div>
-                                        <div class="info-item detail"><b>Detail:</b> ${
+                                        }</div></div>
+                                        
+                                        <div class="info-item shorts"><b>Subtask:</b><br/><div class="enclosed-label-content">${
+                                          task.subtaskCreated
+                                            ? `(${task.subtaskCompleted || 0}/${
+                                                task.subtaskCreated || 0
+                                              }) done`
+                                            : "<i>(No Subtask Present)</i>"
+                                        }</div></div>
+
+                                        <div class="info-item detail"><b>Detail:</b><br/><div class="enclosed-label-content">${
                                           task.description
-                                        }</div>
-                                        <div class="info-item shorts">
-                                            <b>PRD:</b> ${
-                                              task.prdLink
-                                                ? `<a href="${task.prdLink}" title="PRD" target="_blank">🔗 Link</a>`
-                                                : "N/A"
-                                            }
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Figma:</b> ${
-                                              task.figmaLink
-                                                ? `<a href="${task.figmaLink}" title="Figma" target="_blank">🔗 Link</a>`
-                                                : "N/A"
-                                            }
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>FE Doc:</b> ${
-                                              task.feDocLink
-                                                ? `<a href="${task.feDocLink}" title="FeDoc" target="_blank">🔗 Link</a>`
-                                                : "N/A"
-                                            }
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BE Doc:</b> ${
-                                              task.beDocLink
-                                                ? `<a href="${task.beDocLink}" title="BeDoc" target="_blank">🔗 Link</a>`
-                                                : "N/A"
-                                            }
-                                        </div>
+                                        }</div></div>
+                                        
+                                        <div class="info-item shorts"><b>PRD Link:</b><br/><div class="enclosed-label-content">${
+                                          task.prdLink
+                                            ? `<a href="${task.prdLink}" title="PRD" target="_blank">🔗 Link</a>`
+                                            : "<i>(No Link Found)</i>"
+                                        }</div></div>
+                                        
+                                        <div class="info-item shorts"><b>Figma Link:</b><br/><div class="enclosed-label-content">${
+                                          task.figmaLink
+                                            ? `<a href="${task.figmaLink}" title="Figma" target="_blank">🔗 Link</a>`
+                                            : "<i>(No Link Found)</i>"
+                                        }</div></div>
+                                        
+                                        <div class="info-item shorts"><b>FE Doc Link:</b><br/><div class="enclosed-label-content">${
+                                          task.feDocLink
+                                            ? `<a href="${task.feDocLink}" title="FE Doc" target="_blank">🔗 Link</a>`
+                                            : "<i>(No Link Found)</i>"
+                                        }</div></div>
+                                        
+                                        <div class="info-item shorts"><b>BE Doc Link:</b><br/><div class="enclosed-label-content">${
+                                          task.beDocLink
+                                            ? `<a href="${task.beDocLink}" title="BE Doc" target="_blank">🔗 Link</a>`
+                                            : "<i>(No Link Found)</i>"
+                                        }</div></div>
                                     </div>
                                     <div class="steps-list">
                                         ${task.steps
