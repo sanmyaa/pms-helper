@@ -244,7 +244,7 @@
       }
 
       .rejectedbug {
-        color: #af5151;
+        color: #af5151; 
       }
 
       .step-form-link {
@@ -332,7 +332,7 @@
             data.forEach((task) => {
               const taskRow = document.createElement("tr");
               const clientInfo = task.client
-                ? `</br><i>(Client: ${task.client})</i>`
+                ? `</br><i>(client: ${task.client})</i>`
                 : "";
               taskRow.innerHTML = `
                             <td class="expand-icon-td ${
@@ -350,7 +350,7 @@
                                 : ""
                             }">${task.id} ${
                 task.isHotfix
-                  ? '<span title="Hotfix">&#9888;&#65039;</span>'
+                  ? '<span style="font-size: 9px;" title="Hotfix">&#9888;&#65039;</span>'
                   : ""
               }</td>
                             <td class="${
@@ -440,15 +440,15 @@
                                             ? `(${task.subtaskCompleted || 0}/${
                                                 task.subtaskCreated || 0
                                               }) done`
-                                            : "N/A"
+                                            : "<i>(No Subtask Present)</i>"
                                         }</div></div>
                                         <div class="info-item detail"><b>Issue Type:</b></br><div class="enclosed-label-content">${
                                           task.issueType
                                         }</div></div>
                                         <div class="info-item detail"><b>Attachment:</b></br><div class="enclosed-label-content">${
                                           task.attachment
-                                            ? `Link to attached file <a href="${task.attachment}" title="Attachment" target="_blank">🔗 Link</a>`
-                                            : "N/A"
+                                            ? `<a href="${task.attachment}" title="Attachment" target="_blank">🔗 Link</a>`
+                                            : "<i>(No Link Found)</i>"
                                         }</div></div>
                                     </div>
                                     <div class="expander-header">
