@@ -7,13 +7,16 @@
   <style>
     :root {
       --bg: #121212;
+      --box-bg: #2a2a2a4e;
       --text-primary: #ffffff;
       --text-secondary: #bbbbbb;
-      --btn-bg: #1e1e1e;
+      --btn-bg: #2a2a2a;
       --btn-border: #444;
       --btn-text: #ffffff;
       --btn-hover-bg: #ffffff;
       --btn-hover-text: #000000;
+      --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      --border-radius: 2rem;
     }
 
     * {
@@ -34,13 +37,21 @@
     }
 
     .container {
-      max-width: 700px;
+      background: var(--box-bg);
+      padding: 3rem 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      max-width: 600px;
       width: 100%;
       text-align: center;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 600;
       letter-spacing: -0.02em;
     }
@@ -97,4 +108,3 @@
   </div>
 </body>
 </html>
-
